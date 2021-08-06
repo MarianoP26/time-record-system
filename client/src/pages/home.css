@@ -1,0 +1,11 @@
+.column-info {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10%;
+}
+
+.user-column{
+  border-right: 1px solid black;
+}

@@ -1,0 +1,10 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
+  background-color: rgb(161, 0, 67);
+}
+
+.topbar-appname {
+  margin-left: 60px;
+}

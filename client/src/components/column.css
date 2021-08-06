@@ -1,0 +1,9 @@
+.column-list {
+  display: flex;
+  flex-direction: column;
+}
+
+li h3:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
