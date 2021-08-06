@@ -23,7 +23,7 @@ export class Task {
   dateEnd?: number;
 
   @Column({nullable: true})
-  @Field({nullable: true})
+  @Field(type => Int, {nullable: true})
   timer?: number;
 
   @Column({nullable: true})

@@ -7,7 +7,7 @@ type Task {
   name: String!
   dateBegin: Float!
   dateEnd: Float
-  timer: Float
+  timer: Int
   isDone: Boolean
   userId: Int!
   user: User!
@@ -28,6 +28,7 @@ type Query {
 
 type Mutation {
   createTask(createTaskInput: CreateTaskInput!): Task!
+  updateTask(updateTaskInput: UpdateTaskInput!): Task!
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: Int!): User!
@@ -36,6 +37,13 @@ type Mutation {
 input CreateTaskInput {
   name: String!
   userId: Int!
+}
+
+input UpdateTaskInput {
+  name: String
+  userId: Int
+  id: Int!
+  timer: Int!
 }
 
 input CreateUserInput {

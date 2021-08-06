@@ -23,4 +23,18 @@ mutation CreateTask($name: String!, $userId: Int!){
     }
   }
 }
+`;
+
+export const UPDATE_TASK_MUTATION = gql`
+mutation($id: Int!, $timer: Int!){
+  updateTask(updateTaskInput : {
+    id: $id,
+    timer: $timer,
+  }) {
+    name
+    user{
+      name,
+    }
+  }
+}
 `

@@ -4,6 +4,7 @@ import { User } from 'src/users/entities/user.entity';
 import { UsersService } from 'src/users/users.service';
 import { Repository } from 'typeorm';
 import { CreateTaskInput } from './dto/create-task.input';
+import { UpdateTaskInput } from './dto/update-task.input';
 import { Task } from './task.entity';
 
 @Injectable()
@@ -26,6 +27,11 @@ export class TasksService {
 
   async getUser(userId: number): Promise<User> {
     return this.usersService.findOne(userId);
+  }
+
+  async update(id: number, { timer }: UpdateTaskInput) {
+    await this.tasksRepository.update({ id }, { timer });
+    return this.tasksRepository.findOne(id);
   }
 
 }

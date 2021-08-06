@@ -15,6 +15,14 @@ const TaskList = ( { user } ) => {
     setShowModal(!showModal);
   };
 
+  const calculateTotalTime = () => {
+    let totalTime = 0;
+    data.tasks.filter((item) => item.userId === user.userId).map((task, index) => {
+      totalTime += task.timer;
+    })
+    return totalTime;
+  }
+
   return (
     <div>
       <ul className="tasklist">
@@ -29,6 +37,10 @@ const TaskList = ( { user } ) => {
       {showModal && (
         <Modal modalContent={modalContent} setShowModal={setShowModal}/>
       )}
+
+      <div>
+        <h3>Total active time spent on tasks: {calculateTotalTime()} seconds</h3>
+      </div>
     </div>
     
 

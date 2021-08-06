@@ -12,6 +12,7 @@ export const GET_USERS_QUERY = gql`
 export const GET_TASKS_QUERY = gql`
 {
   tasks{
+    id,
     name,
     userId,
     dateBegin,
